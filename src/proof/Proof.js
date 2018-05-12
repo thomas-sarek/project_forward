@@ -10,7 +10,7 @@ class Proof extends Component {
 			<div>
 				<div className="form-wrapper">
 					<form className="step-2-form" onSubmit={this.submit}>
-						<input type="date" name="firstName" placeholder="First Name"  onChange={this.handleChange} />
+						<input type="datetime" name="firstName" placeholder="First Name"  onChange={this.handleChange} />
 						{/*<input type="date" name="firstName" placeholder="First Name" value={Time.now()} onChange={this.handleChange} />*/}
 						<button type="submit" hidden>Submit</button>
 					</form>

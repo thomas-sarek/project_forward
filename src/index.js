@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Proof from './proof/Proof';
+import Clockin from './clockin/Clockin';
 import registerServiceWorker from './registerServiceWorker';
 
 class Root extends React.Component {
@@ -23,7 +24,7 @@ class Root extends React.Component {
 						<Route exact path="/" component={App} />
 						{/*<Route exact path="/onboarding" component={ClientOnBoarding} />*/}
 						<Route path='/proof' component={Proof} />
-						
+						<Route path='/clockin' component={Clockin} />
 						{/*<PublicRoute exact path="/login" authed={isLoggedIn()}*/}
 						             {/*component={Login} componentProps={{login, role: 'admin'}} />*/}
 						

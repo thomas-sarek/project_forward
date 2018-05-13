@@ -13,31 +13,13 @@ const initialState = Immutable.from({
   balances: [
     {
       "ID": -1,
-      "Name": "Project Forward account",
+      "Name": "Project Forward",
       "type": "ProjectForward",
       "balance": 1251699990
     },
     {
       "ID": 1,
       "Name": "American Red Cross",
-      "type": "ORG",
-      "balance": 0
-    },
-    {
-      "ID": 2,
-      "Name": "David Kind",
-      "type": "USER",
-      "balance": 0
-    },
-    {
-      "ID": 3,
-      "Name": "Larry bird",
-      "type": "USER",
-      "balance": 2
-    },
-    {
-      "ID": 4,
-      "Name": "Microsoft",
       "type": "ORG",
       "balance": 0
     },
@@ -51,35 +33,27 @@ const initialState = Immutable.from({
       "ID": 6,
       "Name": "Tristan Thomas",
       "type": "USER",
-      "balance": 22
+      "balance": 45
     }
   ],
   volEvents: [
     {
-      "timestampe": 1526217900,
+      "timestampe": 1526349100,
       "nfporgID": 4,
       "userID": 6,
       "hours": 8,
+      "ForwardCoins": 24,
       "clockInHash": "pxX4rqH3t7OrkpxX4rqH3h",
       "clockOutHash":"aSwMvcC8hpxX4rqH3t7Ork",
       "clockInProofID": "52eb62c0-f556-11e7-bcf8-016fed1c55ad",
       "clockOutProofID": "52eb62c0-f556-11e7-bcf8-016fed1c55ad"
     },
     {
-      "timestampe": 1526349100,
-      "nfporgID": 1,
-      "userID": 3,
-      "hours": 2,
-      "clockInHash": "DAQABAAABAQDC0EzdgR8YG",
-      "clockOutHash":"a4UYah1R/V9qKQSwMvcC8h",
-      "clockInProofID": "fdd5ad1c-56b3-11e8-9c2d-fa7ae01bbebc",
-      "clockOutProofID": "11cf8d42-56b4-11e8-9c2d-fa7ae01bbebc"
-    },
-    {
       "timestampe": 1526217900,
       "nfporgID": 1,
       "userID": 6,
       "hours": 4.23,
+      "ForwardCoins": 21,
       "clockInHash": "pxX4rqH3t7OrkpxX4rqH3h",
       "clockOutHash":"aSwMvcC8hpxX4rqH3t7Ork",
       "clockInProofID": "52eb62c0-f556-11e7-bcf8-016fed1c55ad",

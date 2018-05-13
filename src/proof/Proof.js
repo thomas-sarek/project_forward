@@ -4,8 +4,7 @@
 import React, { Component } from 'react';
 import './Proof.css';
 import sha256 from 'crypto-js/sha256';
-import chainpointClient from 'chainpoint-client';
-// import chainpointClient from 'chainpoint-client-js';
+import { FormGroup, FormControl, HelpBlock, ControlLabel } from 'react-bootstrap';
 
 
 class Proof extends Component {
@@ -23,11 +22,38 @@ class Proof extends Component {
 			<div>
 				<div className="form-wrapper">
 					<form className="step-2-form" onSubmit={this.sendHash}>
-						<input type="text" name="client_public_key" placeholder="Public key" value={props.client_public_key}  onChange={this.handleChange} />
-						<input type="text" name="org_public_key" placeholder="Organization key" value={props.org_public_key}  onChange={this.handleChange} />
-						<input type="date" name="timestamp" value={props.timestamp} onChange={this.handleChange} />
-						{/*<input type="date" name="firstName" placeholder="First Name" value={Time.now()} onChange={this.handleChange} />*/}
-						<button type="submit">Submit</button>
+						<FormGroup
+							controlId="formBasicText"
+							// validationState={this.getValidationState()}
+						>
+							<FormControl
+								type="text"
+								name="client_public_key"
+								value={props.client_public_key}
+								placeholder="Public key"
+								onChange={this.handleChange}
+							/>
+							<FormControl
+								type="text"
+								name="org_public_key"
+								value={this.state.org_public_key}
+								placeholder="Organization key"
+								onChange={this.handleChange}
+							/>
+							<FormControl
+								type="date"
+								name="timestamp"
+								value={this.state.timestamp}
+								placeholder="Enter text"
+								onChange={this.handleChange}
+							/>
+							<FormControl.Feedback />
+							<HelpBlock>Validation is based on string length.</HelpBlock>
+						</FormGroup>
+						{/*<input type="text" name="client_public_key" placeholder="Public key" value={props.client_public_key}  onChange={this.handleChange} />*/}
+						{/*<input type="text" name="org_public_key" placeholder="Organization key" value={props.org_public_key}  onChange={this.handleChange} />*/}
+						{/*<input type="date" name="timestamp" value={props.timestamp} onChange={this.handleChange} />*/}
+						<button type="submit">Send to chainpoint</button>
 					</form>
 				</div>
 				<div className="info-wrapper">

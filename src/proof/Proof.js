@@ -27,6 +27,7 @@ class Proof extends Component {
 							controlId="formBasicText"
 							// validationState={this.getValidationState()}
 						>
+						<ControlLabel>Volunteer's Public Key</ControlLabel>
 							<FormControl
 								type="text"
 								name="client_public_key"
@@ -34,6 +35,7 @@ class Proof extends Component {
 								placeholder="Public key"
 								onChange={this.handleChange}
 							/>
+							<ControlLabel>Non Profit's Public Key</ControlLabel>
 							<FormControl
 								type="text"
 								name="org_public_key"
@@ -41,6 +43,7 @@ class Proof extends Component {
 								placeholder="Organization key"
 								onChange={this.handleChange}
 							/>
+							<ControlLabel>Timestamp</ControlLabel>
 							<FormControl
 								type="date"
 								name="timestamp"
@@ -50,12 +53,14 @@ class Proof extends Component {
 							/>
 							<FormControl.Feedback />
 						</FormGroup>
+					
 						{/*<input type="text" name="client_public_key" placeholder="Public key" value={props.client_public_key}  onChange={this.handleChange} />*/}
 						{/*<input type="text" name="org_public_key" placeholder="Organization key" value={props.org_public_key}  onChange={this.handleChange} />*/}
 						{/*<input type="date" name="timestamp" value={props.timestamp} onChange={this.handleChange} />*/}
 						<button type="submit">Clock in</button>
 					</form>
 				</div>
+				<h1>Verification from Tierion's Chainpoint</h1>
 				<div className="info-wrapper">
 					<p className="proof-info">
 						

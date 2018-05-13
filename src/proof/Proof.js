@@ -53,7 +53,7 @@ class Proof extends Component {
 						{/*<input type="text" name="client_public_key" placeholder="Public key" value={props.client_public_key}  onChange={this.handleChange} />*/}
 						{/*<input type="text" name="org_public_key" placeholder="Organization key" value={props.org_public_key}  onChange={this.handleChange} />*/}
 						{/*<input type="date" name="timestamp" value={props.timestamp} onChange={this.handleChange} />*/}
-						<button type="submit">Send to chainpoint</button>
+						<button type="submit">Clock in</button>
 					</form>
 				</div>
 				<div className="info-wrapper">

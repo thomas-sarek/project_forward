@@ -31,7 +31,7 @@ const initialState = Immutable.from({
     },
     {
       "ID": 6,
-      "Name": "Tristan Thomas",
+      "Name": "Tristan Thoma",
       "type": "USER",
       "balance": 45
     }
@@ -41,7 +41,7 @@ const initialState = Immutable.from({
       "timestampe": 1526349100,
       "nfporgID": 4,
       "userID": 6,
-      "hours": 8,
+      "hours": 4.8,
       "ForwardCoins": 24,
       "clockInHash": "pxX4rqH3t7OrkpxX4rqH3h",
       "clockOutHash":"aSwMvcC8hpxX4rqH3t7Ork",

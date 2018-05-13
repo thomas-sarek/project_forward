@@ -25,9 +25,9 @@ class Proof extends Component {
 					<form className="step-2-form" onSubmit={this.sendHash}>
 						<FormGroup
 							controlId="formBasicText"
-							// validationState={this.getValidationState()}
+						// validationState={this.getValidationState()}
 						>
-						<ControlLabel>Volunteer's Public Key</ControlLabel>
+							<ControlLabel>Volunteer's Public Key</ControlLabel>
 							<FormControl
 								type="text"
 								name="client_public_key"
@@ -53,49 +53,49 @@ class Proof extends Component {
 							/>
 							<FormControl.Feedback />
 						</FormGroup>
-					
-						{/*<input type="text" name="client_public_key" placeholder="Public key" value={props.client_public_key}  onChange={this.handleChange} />*/}
-						{/*<input type="text" name="org_public_key" placeholder="Organization key" value={props.org_public_key}  onChange={this.handleChange} />*/}
-						{/*<input type="date" name="timestamp" value={props.timestamp} onChange={this.handleChange} />*/}
+
+
 						<button type="submit">Clock in</button>
 					</form>
 				</div>
-				<h1>Verification from Tierion's Chainpoint</h1>
+
 				<div className="info-wrapper">
 					<p className="proof-info">
-						
-						Original String: {this.state.original}
 						<br/>
-						Hash : {this.state.hash}
-						<br/>
-				    Proof : {this.state.proof}
+						<b>Original String:</b> {this.state.original}
+						<br />
+
+						<b>Hash :</b> {this.state.hash}
+						<br /><br /><br />
+						<b>Verification from Tierion's Chainpoint</b><br />
+						<b>Proof :</b> {this.state.proof}
 					</p>
 				</div>
 			</div>
-			
+
 		);
 	}
-	
+
 	handleChange = (e) => {
-		const {target} = e;
+		const { target } = e;
 		const value = target.value;
 		const name = target.name;
-		this.setState({[name]: value});
+		this.setState({ [name]: value });
 		this.generateHash();
 	};
-	
+
 	generateHash = () => {
-	 // let date = this.state.timestamp.toLocaleDateString();
-	 let og = this.state.client_public_key +  this.state.org_public_key +  this.state.timestamp.toString();
-   const new_hash = sha256(og).toString();
-		
-		this.setState({hash: new_hash,original: og});
+		// let date = this.state.timestamp.toLocaleDateString();
+		let og = this.state.client_public_key + this.state.org_public_key + this.state.timestamp.toString();
+		const new_hash = sha256(og).toString();
+
+		this.setState({ hash: new_hash, original: og });
 	};
-	
+
 	sendHash = (e) => {
 		e.preventDefault();
 		let test = sendToBlockchain([this.state.hash.toString()]);
-		test.then((a) => {this.setState({proof: a})});
+		test.then((a) => { this.setState({ proof: a }) });
 		// this.setState({proof: test})
 	}
 }
@@ -103,7 +103,7 @@ class Proof extends Component {
 export default Proof;
 
 
-async function sendToBlockchain (hashes) {
+async function sendToBlockchain(hashes) {
 	// A few sample SHA-256 proofs to anchor
 	// let hashes = ['1d2a9e92b561440e8d27a21eed114f7018105db00262af7d7087f7dea9986b0a',
 	// 	'2d2a9e92b561440e8d27a21eed114f7018105db00262af7d7087f7dea9986b0a',
@@ -123,8 +123,8 @@ async function sendToBlockchain (hashes) {
 	let proofs = await chp.getProofs(proofHandles)
 	console.log("Proof Objects: Expand objects below to inspect.")
 	console.log(proofs)
-		
-		proofs = proofs.filter((item)=> {
+
+	proofs = proofs.filter((item) => {
 		return item.proof !== null;
 	});
 
